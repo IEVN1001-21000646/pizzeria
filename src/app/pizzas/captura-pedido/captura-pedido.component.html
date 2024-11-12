@@ -1,0 +1,119 @@
+<div class="pedido-container" [formGroup]="pedidoForm">
+    <div class="pedido-form">
+        <div class="row">
+            <div class="input-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" formControlName="nombreCliente" />
+            </div>
+            <div class="input-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" formControlName="direccion" />
+            </div>
+            <div class="input-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" formControlName="telefono" />
+            </div>
+            <div class="input-group">
+                <label for="fechaCompra">Fecha de compra:</label>
+                <input type="date" id="fechaCompra" formControlName="fechaCompra" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="section">
+                <fieldset>
+                    <legend>Tamaño Pizza</legend>
+                    <div class="radio-group">
+                        <label><input type="radio" formControlName="tamanoPizza" value="Chica" /> Chica $40</label><br />
+                        <label><input type="radio" formControlName="tamanoPizza" value="Mediana" /> Mediana $80</label><br />
+                        <label><input type="radio" formControlName="tamanoPizza" value="Grande" /> Grande $120</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="section">
+                <fieldset>
+                    <legend>Ingredientes</legend>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" formControlName="jamon" /> Jamón $10</label><br />
+                        <label><input type="checkbox" formControlName="pina" /> Piña $10</label><br />
+                        <label><input type="checkbox" formControlName="champinones" /> Champiñones $10</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="input-group">
+                <label for="cantidad">Num. de Pizzas:</label>
+                <input type="number" id="cantidad" formControlName="cantidadPizzas" />
+                <button class="btn-agregar" type="submit" (click)="agregarPizza()">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.pedido-container {
+    background-color: #7a96b5;
+    padding: 20px;
+    border-radius: 8px;
+    color: #000;
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.pedido-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 5px;   
+    border-radius: 4px;
+    width: 180px;
+}
+
+.section fieldset {   
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.section legend {
+    font-weight: bold;
+}
+
+.section {
+    margin-right: 15px;
+}
+
+.btn-agregar {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-agregar:hover {
+    background-color: #45a049;
+}
+</style>
